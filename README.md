@@ -6,6 +6,7 @@ A filterable list of albums using React.js and the Discogs API.
 webpack 4
 Babel
 Staging ES features
+Hot reload
 
 ## Installation
 ```
