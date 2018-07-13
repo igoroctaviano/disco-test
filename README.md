@@ -16,3 +16,13 @@ npm install
 npm start
 ```
 Visit http://localhost:8080/
+
+## Docker
+### Build image
+```
+docker build -t disco-test
+```
+### Run image
+```
+docker run -it --rm -p 8080:8080 --name disco-test disco-test
+```

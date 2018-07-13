@@ -22,6 +22,8 @@ module.exports = {
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     contentBase: "./dist",
-    hot: true
+    hot: true,
+    port: 8080,
+    host: '0.0.0.0', // to accept connections from outside container
   }
 };
