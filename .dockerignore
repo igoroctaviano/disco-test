@@ -1,0 +1,9 @@
+# dont need to be in the image
+Dockerfile
+.dockerignore
+.gitignore
+README.md
+
+# generated things
+dist
+node_modules
