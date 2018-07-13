@@ -1,7 +1,10 @@
 FROM node:8.11.3
 
+RUN mkdir /app
+
 # Copy all local files into the image
-COPY . .
+COPY . /app
+WORKDIR /app
 
 # Build for production
 RUN npm run build

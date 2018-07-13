@@ -24,5 +24,5 @@ docker build -t disco-test
 ```
 ### Run image
 ```
-docker run -it --rm -p 8080:8080 --name disco-test disco-test
+docker run -it --rm -v "$(pwd):/app" -p 8080:8080 --name disco-test disco-test
 ```
