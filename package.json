@@ -17,13 +17,6 @@
     "url": "https://gitlab.com/igoroctaviano/disco-test/issues"
   },
   "homepage": "https://gitlab.com/igoroctaviano/disco-test#README",
-  "babel": {
-    "presets": [
-      "env",
-      "react",
-      "stage-2"
-    ]
-  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
