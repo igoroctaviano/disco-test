@@ -7,6 +7,8 @@ webpack 4
 Babel
 Staging ES features
 Hot reload
+React 16
+Docker container (dev)
 
 ## Installation
 ```
