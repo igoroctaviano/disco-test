@@ -19,12 +19,19 @@ npm start
 ```
 Visit http://localhost:8080/
 
+## Export your Discogs token (local)
+The application uses your personal access token to retrieve data from the Discogs developer API.
+*If you don't have it already, you can generate yours [here](https://www.discogs.com/settings/developers).*
+```
+export DISCOGS_TOKEN=<your_token>
+```
+
 ## Docker
 ### Build image
 ```
-docker build -t disco-test
+docker build -t disco-test .
 ```
 ### Run image
 ```
-docker run -it --rm -v "$(pwd):/app" -p 8080:8080 --name disco-test disco-test
+docker run -it --rm -v "$(pwd):/app" -p 8080:8080 -e DISCOGS_TOKEN=<your_token> --name disco-test disco-test
 ```
