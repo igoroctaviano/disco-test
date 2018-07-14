@@ -26,6 +26,8 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
+    "less": "^3.7.1",
+    "less-loader": "^4.1.0",
     "react-hot-loader": "^4.3.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.0",
