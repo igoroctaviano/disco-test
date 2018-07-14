@@ -4,6 +4,6 @@ Dockerfile
 .gitignore
 README.md
 
-# generated things
-dist
-node_modules
+# WIP: generated things
+# dist
+# node_modules
