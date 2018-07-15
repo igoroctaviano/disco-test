@@ -6,9 +6,12 @@ import { searchArtists, artistAlbums } from "../../config/DiscogsClient.js";
 /* Components */
 import SuggestiveInput from "../presentational/SuggestiveInput.js";
 import DynamicList from "../presentational/DynamicList.js";
+import AlbumDetails from "../presentational/AlbumDetails.js";
+import ArtistItem from "../presentational/ArtistItem.js";
+import AlbumItem from "../presentational/AlbumItem.js";
 import Modal from "../presentational/Modal.js";
 
-export default class SearchContainer extends Component {
+export default class Search extends Component {
   state = {
     query: "",
     artists: [],
@@ -71,7 +74,7 @@ export default class SearchContainer extends Component {
   selectArtist = artist => {
     this.setState({
       query: artist.title,
-      artist: artist,
+      artist,
       artists: [],
       albums: [] }, this.loadArtistAlbums);
   };
@@ -80,47 +83,13 @@ export default class SearchContainer extends Component {
 
   closeAlbumDetails = () => this.setState({ isModalOpened: false });
 
-  renderAlbumDetails = () => {
-    const {
-      album: { artist, title, year, thumb }
-    } = this.state;
-
-    return (
-      <div className="album-modal">
-        <img src={thumb} alt="Album Image" />
-        <div className="content">
-          <div className="header">
-            <p>{artist.toUpperCase()}</p>
-            <h2>{title}</h2>
-            <p>{year}</p>
-          </div>
-          <p>Description.</p>
-        </div>
-      </div>
-    );
-  };
+  renderAlbumDetails = () => <AlbumDetails {...this.state.album} />;
 
   renderAlbumItem = album => (
-    <li
-      className="album-item"
-      key={album.id}
-      onClick={() => this.openAlbumDetails(album)}
-    >
-      <div className="wrap">
-        <img src={album.thumb} alt="Album Image" />
-        <h3>{album.title}</h3>
-      </div>
-      <p>{album.year}</p>
-    </li>
+    <AlbumItem key={album.id} album {...album} onClick={() => this.openAlbumDetails(album)} />
   );
 
-  renderArtist = artist => {
-    return (
-      <li key={artist.id} onClick={() => this.selectArtist(artist)}>
-        {artist.title}
-      </li>
-    );
-  };
+  renderArtist = artist => <ArtistItem key={artist.id} artist {...artist} onClick={() => this.selectArtist(artist)} />;
 
   render() {
     const {
