@@ -7,7 +7,7 @@ const DynamicList = ({
   buttonText,
   isLoading,
   isButtonActive,
-  items,
+  items = [],
   itemRenderer
 }) => {
   const LoadingButton = withLoadingIndicator(Button);

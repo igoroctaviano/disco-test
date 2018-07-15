@@ -77,6 +77,7 @@ export default class SearchContainer extends Component {
     this.setState({
       query: artist.title,
       artist,
+      page: 1,
       artists: [],
       albums: [] }, this.loadArtistAlbums);
   };

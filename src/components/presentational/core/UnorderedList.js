@@ -1,5 +1,5 @@
 import React from "react";
 
-const UnorderedList = props => <ul>{props.items.map(props.itemRenderer)}</ul>;
+const UnorderedList = ({ items = [], itemRenderer }) => <ul>{items.map(itemRenderer)}</ul>;
 
 export default UnorderedList;
