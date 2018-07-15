@@ -10,7 +10,7 @@ import {
   Modal
 } from "../presentational/index.js";
 
-export default class Search extends Component {
+export default class SearchContainer extends Component {
   state = {
     query: "",
     artists: [],
@@ -62,7 +62,7 @@ export default class Search extends Component {
     this.setState({ query: event.target.value }, () => {
       const { query } = this.state;
       if (query && query.length > 0) {
-        if (query.length < 5) {
+        if (query.length < 5 || query.endsWith(" ")) {
           this.loadArtistsThrottle();
         } else {
           this.loadArtistsDebounced();
