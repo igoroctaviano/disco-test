@@ -1,5 +1,5 @@
 import React from "react";
-import loadingIcon from "../../../assets/img/loader.gif";
+import loadingIcon from "../../../assets/images/loader.gif";
 
 const LoadingIndicator = () => (
   <div className="loading-indicator">
