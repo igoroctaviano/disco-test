@@ -39,6 +39,6 @@ module.exports = {
     contentBase: "./dist",
     hot: true,
     port: 8080,
-    host: "0.0.0.0" // to accept connections from outside container
+    host: "0.0.0.0", // to accept connections from outside container
   }
 };
