@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Modal = ({ isActive, onClose, itemRenderer }) =>
   isActive ? (
@@ -9,5 +10,11 @@ const Modal = ({ isActive, onClose, itemRenderer }) =>
       </div>
     </div>
   ) : null;
+
+Modal.propTypes = {
+  isActive: PropTypes.bool,
+  onClose: PropTypes.func,
+  itemRenderer: PropTypes.func
+};
 
 export default Modal;

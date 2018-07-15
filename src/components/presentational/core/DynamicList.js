@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Button from "./Button.js";
 import { withLoadingIndicator } from "../../../utils/utilities.js";
 
@@ -23,6 +24,15 @@ const DynamicList = ({
       ) : null}
     </div>
   ) : null;
+};
+
+DynamicList.propTypes = {
+  onLoad: PropTypes.func,
+  buttonText: PropTypes.string,
+  isLoading: PropTypes.bool,
+  isButtonActive: PropTypes.bool,
+  items: PropTypes.array,
+  itemRenderer: PropTypes.func
 };
 
 export default DynamicList;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const AlbumDetails = ({ artist, title, year, thumb }) => (
   <div className="album-modal">
@@ -13,5 +14,12 @@ const AlbumDetails = ({ artist, title, year, thumb }) => (
     </div>
   </div>
 );
+
+AlbumDetails.propTypes = {
+  artist: PropTypes.string,
+  title: PropTypes.string,
+  year: PropTypes.number,
+  thumb: PropTypes.string
+};
 
 export default AlbumDetails;

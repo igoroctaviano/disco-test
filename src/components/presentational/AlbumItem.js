@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const AlbumDetails = ({ title, year, thumb, onClick, album }) => (
     <li
@@ -12,5 +13,13 @@ const AlbumDetails = ({ title, year, thumb, onClick, album }) => (
     <p>{year}</p>
   </li>
 );
+
+AlbumDetails.propTypes = {
+  title: PropTypes.string,
+  year: PropTypes.number,
+  thumb: PropTypes.string,
+  onClick: PropTypes.func,
+  album: PropTypes.object
+};
 
 export default AlbumDetails;

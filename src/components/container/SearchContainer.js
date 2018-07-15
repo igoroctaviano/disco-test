@@ -89,11 +89,11 @@ export default class SearchContainer extends Component {
   renderAlbumDetails = () => <AlbumDetails {...this.state.album} />;
 
   renderAlbumItem = album => (
-    <AlbumItem key={album.id} album {...album} onClick={() => this.openAlbumDetails(album)} />
+    <AlbumItem key={album.id} album={album} {...album} onClick={() => this.openAlbumDetails(album)} />
   );
 
   renderArtist = artist => (
-    <ArtistItem key={artist.id} artist {...artist} onClick={() => this.selectArtist(artist)} />
+    <ArtistItem key={artist.id} artist={artist} {...artist} onClick={() => this.selectArtist(artist)} />
   );
 
   render() {
@@ -134,3 +134,5 @@ export default class SearchContainer extends Component {
     );
   }
 }
+
+

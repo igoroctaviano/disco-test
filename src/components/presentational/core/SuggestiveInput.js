@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import UnorderedList from "./UnorderedList.js";
 
 const SuggestiveInput = ({ onChange, items, itemRenderer, value }) => {
@@ -13,6 +14,13 @@ const SuggestiveInput = ({ onChange, items, itemRenderer, value }) => {
       ) : null}
     </div>
   );
+};
+
+SuggestiveInput.propTypes = {
+  onChange: PropTypes.func,
+  items: PropTypes.array,
+  itemRenderer: PropTypes.func,
+  value: PropTypes.string
 };
 
 export default SuggestiveInput;
