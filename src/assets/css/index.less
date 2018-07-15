@@ -1,0 +1,225 @@
+@hovering: #EFF3FE;
+@background: #EDEEEF;
+@button: #4C90E2;
+@divisor: #EEEEEE;
+@medium: 14px;
+@shaded: #a79b9b;
+@shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+
+body {
+  background-color: @background;
+  margin: 0;
+  padding: 0;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+/* Album Modal Renderer */
+.album-modal {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0 10px;
+
+    .header {
+      p, h2 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Disco Component */
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 70%;
+  }
+}
+
+/* Suggestive Input Component */
+.suggestive-input {
+  width: 350px;
+  margin: 25px;
+  position: relative;
+  .wrap {
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: @shadow;
+
+    .icon {
+      background: url('../img/magnifier.png');
+      width: 22px;
+      height: 22px;
+      margin: 10px;
+    }
+
+    input {
+      width: calc(100% - 60px);
+      border: 0;
+      font-size: @medium;
+    }
+  }
+
+  ul {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    top:50;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    white-space: pre;
+    list-style: none;
+    text-align: left;
+    box-shadow: @shadow;
+
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: @hovering
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+}
+
+/* Dynamic List Component */
+.dynamic-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    font-size: @medium;
+    margin: 25px;
+    padding: 10px 30px 10px 30px;
+    background-color: #4C90E2;
+    border: 0;
+    border-radius: 25px;
+    color: white;
+  }
+
+  ul {
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 20px 30px 20px 30px;
+      border-bottom: 1px solid @divisor;
+
+      &:hover {
+        background-color: @hovering;
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+}
+
+/* Album List Item Component */
+.album-item {
+  align-items: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+
+  p {
+    color: @shaded;
+  }
+
+  .wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    img {
+      height: 70px;
+      width: 70px;
+      margin-right: 15px;
+    }
+  }
+}
+
+/* Modal Component */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  z-index: 100;
+
+  .modal-content {
+    width: 90vh;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 0.2rem;
+    background-color: white;
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+    .close-button {
+      float: right;
+      background: url('../img/cross.png');
+      cursor: pointer;
+      height: 19px;
+      width: 19px;
+    }
+  }
+}
+
+/* Loading Indicator Component */
+.loading-indicator {
+  margin: 20px;
+}

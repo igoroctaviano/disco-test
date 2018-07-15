@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const title = "Disco!!";
+/* Style */
+import "./assets/css/index.less";
 
-ReactDOM.render(
-  <div>{ title }</div>,
-  document.getElementById("app")
-);
+/* Components */
+import SearchContainer from "./components/container/SearchContainer.js";
+
+ReactDOM.render(<SearchContainer />, document.getElementById("app"));
 
 module.hot.accept();
