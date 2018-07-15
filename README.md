@@ -37,6 +37,8 @@ docker build -t disco-test .
 ```
 docker run -it --rm -v "$(pwd):/app" -p 8080:8080 -e DISCOGS_TOKEN=<your_token> --name disco-test disco-test
 ```
+You have to your pass your Discogs token inside the container as a environment variable.
+*Like the command above, you can pass environment variables to your containers with the -e flag.*
 
 ## Running Jest snapshot testing
 To run the all snapshot tests you can use the command below:
