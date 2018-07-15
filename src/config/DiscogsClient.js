@@ -1,7 +1,4 @@
-const DISCOGS_TOKEN = process.env.DISCOGS_TOKEN
-  ? process.env.DISCOGS_TOKEN
-  : "qMxhnbeqExcjLYHIGmnsNnDTMTncCZzaldHqnChv";
-
+const DISCOGS_TOKEN = process.env.DISCOGS_TOKEN;
 const API_URL = "https://api.discogs.com";
 
 const jsonOrReject = message => res =>
