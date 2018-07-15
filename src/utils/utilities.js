@@ -1,7 +1,5 @@
 import React from "react";
-
-/* Components */
-import LoadingIndicator from "../components/presentational/LoadingIndicator.js";
+import { LoadingIndicator } from "../components/presentational/index.js";
 
 export const withLoadingIndicator = Component => ({ isLoading, ...props }) =>
   isLoading ? <LoadingIndicator /> : <Component {...props} />;

@@ -1,10 +1,6 @@
 import React from "react";
-
-/* Components */
 import Button from "./Button.js";
-
-/* Utilities */
-import { withLoadingIndicator } from "../../utils/utilities.js";
+import { withLoadingIndicator } from "../../../utils/utilities.js";
 
 const DynamicList = ({
   onLoad,

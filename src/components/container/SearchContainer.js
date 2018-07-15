@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-
-/* Utilities */
 import { searchArtists, artistAlbums } from "../../config/DiscogsClient.js";
-
-/* Components */
-import SuggestiveInput from "../presentational/SuggestiveInput.js";
-import DynamicList from "../presentational/DynamicList.js";
-import AlbumDetails from "../presentational/AlbumDetails.js";
-import ArtistItem from "../presentational/ArtistItem.js";
-import AlbumItem from "../presentational/AlbumItem.js";
-import Modal from "../presentational/Modal.js";
+import {
+  SuggestiveInput,
+  DynamicList,
+  AlbumDetails,
+  ArtistItem,
+  AlbumItem,
+  Modal
+} from "../presentational/index.js";
 
 export default class Search extends Component {
   state = {
@@ -89,7 +87,9 @@ export default class Search extends Component {
     <AlbumItem key={album.id} album {...album} onClick={() => this.openAlbumDetails(album)} />
   );
 
-  renderArtist = artist => <ArtistItem key={artist.id} artist {...artist} onClick={() => this.selectArtist(artist)} />;
+  renderArtist = artist => (
+    <ArtistItem key={artist.id} artist {...artist} onClick={() => this.selectArtist(artist)} />
+  );
 
   render() {
     const {

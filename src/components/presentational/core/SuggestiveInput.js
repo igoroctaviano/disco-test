@@ -1,6 +1,4 @@
 import React from "react";
-
-/* Components */
 import UnorderedList from "./UnorderedList.js";
 
 const SuggestiveInput = ({ onChange, items, itemRenderer, value }) => {
