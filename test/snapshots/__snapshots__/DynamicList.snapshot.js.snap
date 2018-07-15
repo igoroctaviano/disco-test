@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="dynamic-list"
+>
+  <ul>
+    1
+    2
+    3
+  </ul>
+</div>
+`;
