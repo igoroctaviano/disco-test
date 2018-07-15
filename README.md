@@ -1,14 +1,16 @@
 # Disco Test
-
 A filterable list of albums using React.js and the Discogs API.
 
 ## Features
-webpack 4
-Babel
-Staging ES features
-Hot reload
-React 16
-Docker container (dev)
+- webpack 4
+- Babel
+- Staging ES features
+- Hot reload
+- React 16
+- Docker container (dev)
+- Jest snapshot test
+- PropTypes
+- less
 
 ## Installation
 ```
@@ -17,7 +19,7 @@ cd disco-test
 npm install
 npm start
 ```
-Visit http://localhost:8080/
+Visit http://localhost:8080/.
 
 ## Export your Discogs token (local)
 The application uses your personal access token to retrieve data from the Discogs developer API.
@@ -35,3 +37,19 @@ docker build -t disco-test .
 ```
 docker run -it --rm -v "$(pwd):/app" -p 8080:8080 -e DISCOGS_TOKEN=<your_token> --name disco-test disco-test
 ```
+
+## Running Jest snapshot testing
+To run the all snapshot tests you can use the command below:
+```
+npm run test:snapshot
+```
+Running tests in watch mode (second terminal):
+```
+npm run test:snapshot:watch
+```
+
+## Bundling the app
+```
+npm run build
+```
+The app bundle will be generated inside the /dist directory.
