@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { searchArtists, artistAlbums } from "../../config/DiscogsClient.js";
+import { debounce, throttle } from "../../utils/utilities.js";
 import {
   SuggestiveInput,
   DynamicList,
@@ -54,14 +55,17 @@ export default class Search extends Component {
     });
   };
 
+  loadArtistsDebounced = debounce(this.loadArtists, 500);
+  loadArtistsThrottle = throttle(this.loadArtists, 500);
+
   updateQuery = event => {
     this.setState({ query: event.target.value }, () => {
       const { query } = this.state;
       if (query && query.length > 0) {
         if (query.length < 5) {
-          this.loadArtists();
+          this.loadArtistsThrottle();
         } else {
-          this.loadArtists();
+          this.loadArtistsDebounced();
         }
       } else {
         this.setState({ artists: [], albums: [] });
